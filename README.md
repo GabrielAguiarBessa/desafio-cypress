@@ -22,13 +22,7 @@ Automação web utilizando Node.js e Cypress
 O input deve limitar ou formatar o valor, mantendo o layout do modal intacto.  
 
 **Resultado atual:**  
-O modal se quebra; campos e botões "vazam" para fora do contêiner.  
-
-**Evidências:**  
-- (inserir screenshot do modal quebrado)  
-
-**Sugestões:**  
-Adicionar validação de limite, máscara/maxlength e ajustes de CSS (overflow-wrap, max-width, etc.).
+O modal se quebra; campos e botões "vazam" para fora do contêiner.    
 
 ---
 
@@ -52,13 +46,6 @@ O sistema deve validar um limite razoável de dias e rejeitar valores fora da po
 **Resultado atual:**  
 O aluguel é concluído normalmente, gerando receita e ocupando o veículo.  
 
-**Evidências:**  
-- (inserir logs/respostas do backend)  
-- (inserir screenshot do resumo do pedido)  
-
-**Sugestões:**  
-Implementar validação server-side e client-side; considerar impacto financeiro e de estoque.
-
 ---
 
 ## BUG-003 — Cupom fixo de R$50 aplicado incorretamente
@@ -81,12 +68,6 @@ Total = Subtotal - 50 = R$150
 **Resultado atual:**  
 Total exibido como R$50.  
 
-**Evidências:**  
-- (inserir screenshot do pagamento mostrando total incorreto)  
-
-**Sugestões:**  
-Rever lógica de desconto; garantir ordem correta dos cálculos.
-
 ---
 
 ## BUG-004 — Cupom aplicado sobre a diária e não sobre o subtotal
@@ -108,9 +89,6 @@ Total = 2×200 - 50 = R$350
 
 **Resultado atual:**  
 Desconto aplicado apenas sobre a diária (R$200 - 50), ignorando multiplicador de dias.  
-
-**Evidências:**  
-- (inserir screenshot cálculo aplicado)  
 
 **Sugestões:**  
 Corrigir base de cálculo para usar subtotal antes de impostos/taxas; incluir testes automatizados.
@@ -136,12 +114,6 @@ O valor deve refletir o novo aluguel.
 **Resultado atual:**  
 O valor permanece inalterado.  
 
-**Evidências:**  
-- (inserir antes/depois da Dashboard)  
-
-**Sugestões:**  
-Verificar consultas no backend e atualização reativa no frontend.
-
 ---
 
 ## BUG-006 — Contador "Veículos alugados" não incrementa
@@ -162,11 +134,6 @@ O contador deve representar o total atual de veículos alugados.
 **Resultado atual:**  
 Valor permanece em 1 mesmo após múltiplos aluguéis.  
 
-**Evidências:**  
-- (inserir screenshot da Dashboard)  
-
-**Sugestões:**  
-Revisar query de contagem, estado global e cache; considerar teste idempotente pós-refresh.
 
 ---
 
@@ -187,12 +154,6 @@ O veículo retorna ao status "disponível" e os demais não são afetados.
 
 **Resultado atual:**  
 Todos os veículos ficam "indisponíveis", travando o sistema.  
-
-**Evidências:**  
-- (inserir screenshot da Dashboard)  
-
-**Sugestões:**  
-Revisar lógica de rollback e atualização global de status.
 
 ---
 
